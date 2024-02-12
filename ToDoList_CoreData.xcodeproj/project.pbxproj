@@ -60,17 +60,57 @@
 		D302C2932B7A6860002C7B7E /* ToDoList_CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				D302C2942B7A6860002C7B7E /* AppDelegate.swift */,
-				D302C2962B7A6860002C7B7E /* SceneDelegate.swift */,
-				D302C2982B7A6860002C7B7E /* TaskListViewController.swift */,
-				D324B4B02B7A85250018BF31 /* FieldButtonFactory.swift */,
-				D36268182B7A8F4000965675 /* StorageManager.swift */,
-				D302C2A02B7A6862002C7B7E /* Assets.xcassets */,
+				D33A28522B7AA75F00F5B545 /* SupportingFiles */,
+				D33A28532B7AA79100F5B545 /* ViewControllers */,
+				D33A28542B7AA7BD00F5B545 /* Factories */,
+				D33A28552B7AA7D800F5B545 /* Services */,
+				D33A28562B7AA82900F5B545 /* Resources */,
 				D302C2A22B7A6862002C7B7E /* LaunchScreen.storyboard */,
-				D302C2A52B7A6862002C7B7E /* Info.plist */,
 				D302C29D2B7A6860002C7B7E /* ToDoList_CoreData.xcdatamodeld */,
 			);
 			path = ToDoList_CoreData;
+			sourceTree = "<group>";
+		};
+		D33A28522B7AA75F00F5B545 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D302C2942B7A6860002C7B7E /* AppDelegate.swift */,
+				D302C2962B7A6860002C7B7E /* SceneDelegate.swift */,
+				D302C2A52B7A6862002C7B7E /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D33A28532B7AA79100F5B545 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D302C2982B7A6860002C7B7E /* TaskListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D33A28542B7AA7BD00F5B545 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				D324B4B02B7A85250018BF31 /* FieldButtonFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		D33A28552B7AA7D800F5B545 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D36268182B7A8F4000965675 /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D33A28562B7AA82900F5B545 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D302C2A02B7A6862002C7B7E /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ToDoList_CoreData/Info.plist;
+				INFOPLIST_FILE = ToDoList_CoreData/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
@@ -323,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ToDoList_CoreData/Info.plist;
+				INFOPLIST_FILE = ToDoList_CoreData/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
