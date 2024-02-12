@@ -42,8 +42,14 @@ class StorageManager {
         }
     }
     
-    func deleteObject(_ object: NSManagedObject) {
-            managedContext.delete(object)
+    func deleteObject(_ object: ToDoTask) {
+        managedContext.delete(object)
+        saveContext()
+    }
+    
+    func deleteTask(_ task: ToDoTask) {
+            let context = persistentContainer.viewContext
+            context.delete(task)
             saveContext()
         }
     

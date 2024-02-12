@@ -22,25 +22,9 @@ final class TaskListViewController: UITableViewController {
     }
     
     @objc private func addNewTask() {
-        showAlert(withTitle: "New Task", andMessage: "What do you want to do")
+        showAlert(withTitle: "New Task", andMessage: "What do you want to do", forRowAt: 0)
     }
     
-    
-    private func showAlert(withTitle title: String, andMessage message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "Save Task", style: .default) { [unowned self] _ in
-            guard let taskName = alert.textFields?.first?.text, !taskName.isEmpty else { return }
-            save(taskName)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        alert.addTextField { textField in
-            textField.placeholder = "New Task"
-        }
-        present(alert, animated: true)
-    }
-
     private func save(_ taskName: String) {
         let task = ToDoTask(context: storageManager.persistentContainer.viewContext)
         task.title = taskName
@@ -51,6 +35,12 @@ final class TaskListViewController: UITableViewController {
         
         storageManager.saveContext()
     }
+    
+    func deleteObject(at indexPath: IndexPath) {
+        let objects = storageManager.fetchObjects(ToDoTask.self)
+        let object = objects[indexPath.row]
+        storageManager.deleteObject(object)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -59,8 +49,18 @@ extension TaskListViewController {
         taskList.count
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let taskToDelete = taskList[indexPath.row]
+            storageManager.deleteTask(taskToDelete)
+            taskList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        showAlert(withTitle: "Edit Task", andMessage: "",forRowAt: indexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,6 +98,43 @@ private extension TaskListViewController {
             action: #selector(addNewTask)
         )
         navigationController?.navigationBar.tintColor = .white
+    }
+}
+
+private extension TaskListViewController {
+    func showAlert(withTitle title: String, andMessage message: String, forRowAt row: Int) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        if message != ""  {
+            alert.addTextField { textField in
+                textField.placeholder = "New Task"
+            }
+            let saveAction = UIAlertAction(title: "Save Task", style: .default) { [unowned self] _ in
+                guard let task = alert.textFields?.first?.text, !task.isEmpty else { return }
+                save(task)
+            }
+            alert.addAction(saveAction)
+        } else {
+            let taskToEdit = taskList[row]
+            alert.addTextField { textField in
+                textField.text = taskToEdit.title
+            }
+            let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] _ in
+                guard let updateTask = alert.textFields?.first?.text, !updateTask.isEmpty else { return }
+                taskToEdit.title = updateTask
+                
+                let indexPath = IndexPath(row: row, section: 0)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+                
+                storageManager.saveContext()
+            }
+            alert.addAction(saveAction)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
     }
 }
 
