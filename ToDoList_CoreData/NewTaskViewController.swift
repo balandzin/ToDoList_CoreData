@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewTaskViewController.swift
 //  ToDoList_CoreData
 //
 //  Created by Антон Баландин on 12.02.24.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class NewTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .systemBackground
     }
-
+    
 
 }
-
