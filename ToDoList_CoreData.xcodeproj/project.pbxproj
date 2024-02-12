@@ -13,8 +13,8 @@
 		D302C29F2B7A6860002C7B7E /* ToDoList_CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D302C29D2B7A6860002C7B7E /* ToDoList_CoreData.xcdatamodeld */; };
 		D302C2A12B7A6862002C7B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D302C2A02B7A6862002C7B7E /* Assets.xcassets */; };
 		D302C2A42B7A6862002C7B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D302C2A22B7A6862002C7B7E /* LaunchScreen.storyboard */; };
-		D302C2CF2B7A73EA002C7B7E /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302C2CE2B7A73EA002C7B7E /* NewTaskViewController.swift */; };
 		D324B4B12B7A85250018BF31 /* FieldButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D324B4B02B7A85250018BF31 /* FieldButtonFactory.swift */; };
+		D36268192B7A8F4000965675 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36268182B7A8F4000965675 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		D302C2A02B7A6862002C7B7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D302C2A32B7A6862002C7B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D302C2A52B7A6862002C7B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D302C2CE2B7A73EA002C7B7E /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		D324B4B02B7A85250018BF31 /* FieldButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldButtonFactory.swift; sourceTree = "<group>"; };
+		D36268182B7A8F4000965675 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				D302C2942B7A6860002C7B7E /* AppDelegate.swift */,
 				D302C2962B7A6860002C7B7E /* SceneDelegate.swift */,
 				D302C2982B7A6860002C7B7E /* TaskListViewController.swift */,
-				D302C2CE2B7A73EA002C7B7E /* NewTaskViewController.swift */,
 				D324B4B02B7A85250018BF31 /* FieldButtonFactory.swift */,
+				D36268182B7A8F4000965675 /* StorageManager.swift */,
 				D302C2A02B7A6862002C7B7E /* Assets.xcassets */,
 				D302C2A22B7A6862002C7B7E /* LaunchScreen.storyboard */,
 				D302C2A52B7A6862002C7B7E /* Info.plist */,
@@ -145,8 +145,8 @@
 			files = (
 				D302C2992B7A6860002C7B7E /* TaskListViewController.swift in Sources */,
 				D324B4B12B7A85250018BF31 /* FieldButtonFactory.swift in Sources */,
-				D302C2CF2B7A73EA002C7B7E /* NewTaskViewController.swift in Sources */,
 				D302C2952B7A6860002C7B7E /* AppDelegate.swift in Sources */,
+				D36268192B7A8F4000965675 /* StorageManager.swift in Sources */,
 				D302C29F2B7A6860002C7B7E /* ToDoList_CoreData.xcdatamodeld in Sources */,
 				D302C2972B7A6860002C7B7E /* SceneDelegate.swift in Sources */,
 			);

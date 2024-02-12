@@ -53,7 +53,7 @@ final class FilledButtonFactory: ButtonFactory {
         
         // Create a button using the configuration and action, and disable autoresizing
         let button = UIButton(configuration: buttonConfiguration, primaryAction: action)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        //button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }
